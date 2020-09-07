@@ -12,7 +12,7 @@ import os
 if 'BOP_PATH' in os.environ:
   datasets_path = os.environ['BOP_PATH']
 else:
-  datasets_path = r'/home/bwww/Projects/ImageGeneration-BlenderProc/BlenderProc/BOP'
+  datasets_path = r'../../BlenderProc/BOP'
 
 # Folder for outputs (e.g. visualizations).
 output_path = r'../../output/bop_data'
