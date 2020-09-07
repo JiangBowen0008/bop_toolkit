@@ -33,15 +33,19 @@ p = {
   'renderer_type': 'python',  # Options: 'cpp', 'python'.
 
   # Folder containing the BOP datasets.
-  'datasets_path': config.output_path
-  # 'datasets_path': config.datasets_path,
+  # 'datasets_path': config.output_path
+  'datasets_path': config.datasets_path,
+
+  'output_path': config.output_path,
+
+  'scale': config.scale
 }
 ################################################################################
 
 
 # Load dataset parameters.
 dp_split = dataset_params.get_split_params(
-  p['datasets_path'], p['dataset'], p['dataset_split'], p['dataset_split_type'])
+  p['output_path'], p['dataset'], p['dataset_split'], p['dataset_split_type'])
 
 model_type = None
 if p['dataset'] == 'tless':
@@ -81,7 +85,7 @@ for scene_id in scene_ids:
 
   # Add object models.
   for obj_id in dp_model['obj_ids']:
-    ren.add_object(obj_id, dp_model['model_tpath'].format(obj_id=obj_id))
+    ren.add_object(obj_id, dp_model['model_tpath'].format(obj_id=obj_id), scale=p['scale'])
 
   im_ids = sorted(scene_gt.keys())
   for im_id in im_ids:
