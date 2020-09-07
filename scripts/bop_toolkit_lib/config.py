@@ -12,10 +12,10 @@ import os
 if 'BOP_PATH' in os.environ:
   datasets_path = os.environ['BOP_PATH']
 else:
-  datasets_path = r'../../BlenderProc/BOP'
+  datasets_path = r'BOP'
 
 # Folder for outputs (e.g. visualizations).
-output_path = r'../../output/bop_data'
+output_path = r'../output/bop_data'
 
 # Output scale factor
 scale = 0.5
