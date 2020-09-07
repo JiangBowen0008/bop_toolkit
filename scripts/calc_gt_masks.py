@@ -18,7 +18,7 @@ from bop_toolkit_lib import visibility
 ################################################################################
 p = {
   # See dataset_params.py for options.
-  'dataset': 'lm',
+  'dataset': 'lmo',
 
   # Dataset split. Options: 'train', 'val', 'test'.
   'dataset_split': 'test',
@@ -33,7 +33,8 @@ p = {
   'renderer_type': 'python',  # Options: 'cpp', 'python'.
 
   # Folder containing the BOP datasets.
-  'datasets_path': config.datasets_path,
+  'datasets_path': config.output_path
+  # 'datasets_path': config.datasets_path,
 }
 ################################################################################
 

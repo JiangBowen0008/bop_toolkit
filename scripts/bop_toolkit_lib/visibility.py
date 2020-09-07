@@ -24,6 +24,8 @@ def _estimate_visib_mask(d_test, d_model, delta, visib_mode='bop19'):
        significant.
   :return: Visibility mask.
   """
+  print(d_test.shape)
+  print(d_model.shape)
   assert (d_test.shape == d_model.shape)
 
   if visib_mode == 'bop18':

@@ -361,9 +361,11 @@ def get_split_params(datasets_path, dataset_name, split, split_type=None):
     raise ValueError('Unknown BOP dataset.')
 
   base_path = join(datasets_path, dataset_name)
-  split_path = join(base_path, split)
+  split_path = join(base_path, "train_pbr")
+  # split_path = join(base_path, split)
   if split_type is not None:
     split_path += '_' + split_type
+  p['im_size'] = (671, 502)
 
   p.update({
     # Path to the split directory.
@@ -402,6 +404,8 @@ def get_split_params(datasets_path, dataset_name, split, split_type=None):
       split_path, '{scene_id:06d}', 'mask_visib',
       '{im_id:06d}_{gt_id:06d}.png'),
   })
+
+  print(p['split_path'])
 
   return p
 
