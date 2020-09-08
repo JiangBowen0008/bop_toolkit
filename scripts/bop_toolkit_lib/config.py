@@ -18,7 +18,7 @@ else:
 output_path = r'../output/bop_data'
 
 # Output scale factor
-scale = 0.5
+scale = 1.0
 
 ######## Extended ########
 
