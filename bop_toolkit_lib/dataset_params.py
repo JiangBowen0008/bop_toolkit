@@ -85,6 +85,8 @@ def get_model_params(datasets_path, dataset_name, model_type=None):
     'hbs': [1, 3, 4, 8, 9, 10, 12, 15, 17, 18, 19, 22, 23, 29, 32, 33],
     'hb': list(range(1, 34)),  # Full HB dataset.
     'ycbv': list(range(1, 22)),
+    'custom-grasp': list(range(1, 149)),
+    'custom-suction': list(range(1, 120))
   }[dataset_name]
 
   # ID's of objects with ambiguous views evaluated using the ADI pose error
@@ -102,6 +104,8 @@ def get_model_params(datasets_path, dataset_name, model_type=None):
     'hbs': [10, 12, 18, 29],
     'hb': [6, 10, 11, 12, 13, 14, 18, 24, 29],
     'ycbv': [1, 13, 14, 16, 18, 19, 20, 21],
+    'custom-grasp': [],
+    'custom-suction': []
   }[dataset_name]
 
   # T-LESS includes two types of object models, CAD and reconstructed.
@@ -357,15 +361,19 @@ def get_split_params(datasets_path, dataset_name, split, split_type=None):
       p['azimuth_range'] = (0, 2 * math.pi)
       p['elev_range'] = (-1.2788, 1.1291)  # (-73.27, 64.69) [deg].
 
+  if dataset_name in ['custom-suction', 'custom-grasp']:
+    p['scene_ids'] = list(range(1, 16))
+    p['im_size'] = (671, 502)
+    split = "train_pbr"
+
   else:
     raise ValueError('Unknown BOP dataset.')
 
   base_path = join(datasets_path, dataset_name)
-  split_path = join(base_path, "train_pbr")
-  # split_path = join(base_path, split)
+  # split_path = join(base_path, "train_pbr")
+  split_path = join(base_path, split)
   if split_type is not None:
     split_path += '_' + split_type
-  p['im_size'] = (671, 502)
 
   p.update({
     # Path to the split directory.
