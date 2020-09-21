@@ -12,18 +12,21 @@ import os
 if 'BOP_PATH' in os.environ:
   datasets_path = os.environ['BOP_PATH']
 else:
-  datasets_path = r'/home/bwww/Projects/ImageGeneration-BlenderProc/BlenderProc/BOP'
+  datasets_path = r'BOP'
+
+# Folder for outputs (e.g. visualizations).
+output_path = r'../output/bop_data'
+
+# Output scale factor
+scale = 1.0
+
+######## Extended ########
 
 # Folder with pose results to be evaluated.
 results_path = r'/path/to/folder/with/results'
 
 # Folder for the calculated pose errors and performance scores.
 eval_path = r'/path/to/eval/folder'
-
-######## Extended ########
-
-# Folder for outputs (e.g. visualizations).
-output_path = r'../../../output/bop_data'
 
 # For offscreen C++ rendering: Path to the build folder of bop_renderer (github.com/thodan/bop_renderer).
 bop_renderer_path = r'/path/to/bop_renderer/build'

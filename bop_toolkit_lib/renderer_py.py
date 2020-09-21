@@ -286,9 +286,13 @@ class RendererPython(renderer.Renderer):
     surf_color = None
     if 'surf_color' in kwargs:
       surf_color = kwargs['surf_color']
+    
+    if 'scale' in kwargs:
+      scale = kwargs['scale']
 
     # Load the object model.
     model = inout.load_ply(model_path)
+    model['pts'] = model['pts'] * scale
     self.models[obj_id] = model
 
     # Calculate the 3D bounding box of the model (will be used to set the near
