@@ -86,7 +86,8 @@ def get_model_params(datasets_path, dataset_name, model_type=None):
     'hb': list(range(1, 34)),  # Full HB dataset.
     'ycbv': list(range(1, 22)),
     'custom-grasp': list(range(1, 149)),
-    'custom-suction': list(range(1, 120))
+    'custom-suction': list(range(149, 268)),
+    'custom-comb': list(range(1, 268))
   }[dataset_name]
 
   # ID's of objects with ambiguous views evaluated using the ADI pose error
@@ -105,7 +106,8 @@ def get_model_params(datasets_path, dataset_name, model_type=None):
     'hb': [6, 10, 11, 12, 13, 14, 18, 24, 29],
     'ycbv': [1, 13, 14, 16, 18, 19, 20, 21],
     'custom-grasp': [],
-    'custom-suction': []
+    'custom-suction': [],
+    'custom-comb': []
   }[dataset_name]
 
   # T-LESS includes two types of object models, CAD and reconstructed.
@@ -361,7 +363,7 @@ def get_split_params(datasets_path, dataset_name, split, split_type=None):
       p['azimuth_range'] = (0, 2 * math.pi)
       p['elev_range'] = (-1.2788, 1.1291)  # (-73.27, 64.69) [deg].
 
-  if dataset_name in ['custom-suction', 'custom-grasp']:
+  if dataset_name in ['custom-suction', 'custom-grasp', 'custom-comb']:
     p['scene_ids'] = list(range(1, 16))
     p['im_size'] = (671, 502)
     split = "train_pbr"
