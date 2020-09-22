@@ -18,7 +18,7 @@ from bop_toolkit_lib import visibility
 ################################################################################
 p = {
   # See dataset_params.py for options.
-  'dataset': 'lmo',
+  'dataset': 'custom-comb',
 
   # Dataset split. Options: 'train', 'val', 'test'.
   'dataset_split': 'test',
