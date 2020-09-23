@@ -10,7 +10,7 @@ import pytz
 import math
 import subprocess
 import numpy as np
-from scipy.spatial import distance
+# from scipy.spatial import distance
 
 from bop_toolkit_lib import transform
 
