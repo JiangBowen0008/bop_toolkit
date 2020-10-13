@@ -85,9 +85,9 @@ def get_model_params(datasets_path, dataset_name, model_type=None):
     'hbs': [1, 3, 4, 8, 9, 10, 12, 15, 17, 18, 19, 22, 23, 29, 32, 33],
     'hb': list(range(1, 34)),  # Full HB dataset.
     'ycbv': list(range(1, 22)),
-    'custom-grasp': list(range(1, 149)),
+    'custom-grasp': list(range(1, 125)),
     'custom-suction': list(range(149, 268)),
-    'custom-comb': list(range(1, 268))
+    'custom-comb': list(range(1, 124)) + list(range(149, 268))
   }[dataset_name]
 
   # ID's of objects with ambiguous views evaluated using the ADI pose error
