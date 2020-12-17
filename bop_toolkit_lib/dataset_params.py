@@ -72,6 +72,7 @@ def get_model_params(datasets_path, dataset_name, model_type=None):
   :return: Dictionary with object model parameters for the specified dataset.
   """
   # Object ID's.
+  # test
   obj_ids = {
     'lm': list(range(1, 16)),
     'lmo': [1, 5, 6, 8, 9, 10, 11, 12],
